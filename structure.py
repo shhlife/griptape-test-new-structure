@@ -21,12 +21,8 @@ def run(args: List[str] = typer.Argument(...)):
             agent.run(args)
         else:
             # Run whatever code you want and then set the context.output with the response you want to send.
-            # The output can be a string, or an artifact. In this case, we'll use a ListArtifact.
-            output_artifact_msg = TextArtifact("Hello from a Griptape Cloud Structure.")
-            output_artifact_prompt = TextArtifact(args)
-
-            task_output = ListArtifact([output_artifact_msg, output_artifact_prompt])
-            context.output = task_output
+           
+            context.output = args
 
 
 if __name__ == "__main__":
